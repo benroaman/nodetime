@@ -1,0 +1,11 @@
+{
+ "name": "nodetime",
+ "version": "0.0.1",
+ "description": "An app to teach me node",
+ "author": "Ben Roaman <benroaman@gmail.com>",
+ "main": "app.js",
+ "repository": {
+   "type": "git",
+   "url": "https://github.com/tiy-durham-fe-2015/feclass"
+ }
+}
