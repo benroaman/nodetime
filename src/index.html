@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+
+    <h1>hello, world</h1>
+
+    <form class="new-friend-form">
+
+      <input type="text" class="friend-name"/>
+
+      <label>
+        <input type="radio" name="sex" value="male" />
+        male
+      </label>
+      <label>
+        <input type="radio" name="sex" value="female" />
+        female
+      </label>
+
+      <button class="add-friend-button">add friend</button>
+
+    </form>
+
+    <ul class="friends-list">
+
+    </ul>
+
+    <script type="text/html" id="friend-listing">
+      <% m.friends.forEach(function(friend) { %>
+
+        <li>
+          <p>name: <%- friend.name %></p>
+          <p>sex: <%- friend.sex %></p>
+        </li>
+
+      <% }) %>
+    </script>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/lodash.js"></script>
+    <script src="js/main.js"></script>
+
+  </body>
+</html>
