@@ -15,6 +15,7 @@ var express = require('express'), // include the dependency express
 app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/src'));
+app.use('/dist', express.static(__dirname + '/dist'));
 
 app.get('/api/friends', function (req, res) { // req is the request object, sent by data, res is how you respond to req
   res.json(friends);
