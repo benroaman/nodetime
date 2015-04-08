@@ -10,7 +10,7 @@
   },
   "scripts": {
     "scss": "node-sass src/css/main.scss dist/main.css",
-    "js": "cp src/app.js dist/app.js && find src/** -type f -name '*.js' ! -name 'app.js' ! -name 'jquery.js' ! -name 'lodash.js' ! -name 'init.js' -print0 | sort -z | xargs -0 cat -- >>dist/app.js && cat src/js/init.js >> dist/app.js",
+    "js": "rm dist/app.js && cp src/app.js dist/app.js && find src/** -type f -name '*.js' ! -name 'app.js' ! -name 'jquery.js' ! -name 'lodash.js' ! -name 'init.js' -print0 | sort -z | xargs -0 cat -- >>dist/app.js && cat src/js/init.js >> dist/app.js",
     "watch:scss": "onchange 'src/**/*.scss' -- npm run scss",
     "watch:js": "onchange 'src/**/*.js' -- npm run js",
     "init": "npm run scss && npm run js",
@@ -18,10 +18,10 @@
   },
   "dependencies": {
     "body-parser": "^1.12.0",
+    "nedb": "^1.1.1",
     "express": "^4.12.2"
   },
   "devDependencies": {
-    "nedb": "^1.1.1",
     "node-sass": "^2.0.1",
     "onchange": "^1.0.0"
   }

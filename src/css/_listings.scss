@@ -1,0 +1,65 @@
+.listing-sex-label {
+  font-family: sex;
+  font-size: .5em;
+}
+
+hr {
+  width: 50%;
+  margin-left: 0;
+}
+
+.edit-button {
+  font-family: icons;
+  border: none;
+  font-size: 12px;
+  background: none;
+  color: lightgrey;
+  transition: all .15s;
+  padding: 0;
+}
+
+.edit-button:hover {
+  color: slategrey;
+}
+
+.listing-button {
+  font-family: icons;
+  font-size: 20px;
+  border: none;
+  background: none;
+  color: lightgrey;
+  transition: all .15s;
+  padding: 0;
+  cursor: pointer;
+}
+
+.listing-button:hover {
+  color: slategrey;
+}
+
+.main-edit-button {
+  visibility: visible;
+  opacity: 1;
+}
+
+.listing-button + .listing-button {
+  margin-left: 1em;
+  margin-top: .25em;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.favorite {
+  color: orange;
+}
+
+.favorite:hover {
+  color: darkorange;
+}
+
+.delete-button:hover {
+  color: firebrick;
+}

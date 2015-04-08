@@ -5,20 +5,34 @@
   </head>
   <body>
 
-    <h1>hello, world</h1>
+    <h1>You got friends?</h1>
 
     <form class="new-friend-form">
+      <div class="form-section">
+        <input type="text" class="friend-first-name friend-input" placeholder="first name"/>
+        <input type="text" class="friend-last-name friend-input" placeholder="last name"/>
+      </div>
 
-      <input type="text" class="friend-name"/>
+      <div class="form-section">
+        <input type="text" class="friend-hometown friend-input" placeholder="hometown"/>
+        <input type="text" class="friend-occupation friend-input" placeholder="occupation"/>
+      </div>
 
-      <label>
-        <input type="radio" name="sex" value="male" />
-        male
-      </label>
-      <label>
-        <input type="radio" name="sex" value="female" />
-        female
-      </label>
+      <div class="form-section">
+        <input type="text" class="friend-email friend-input" placeholder="email"/>
+        <input type="text" class="friend-phone friend-input" placeholder="phone"/>
+      </div>
+
+      <div class="form-section">
+        <label>
+          <input type="radio" name="sex" value="m" />
+          <span class="sex-label">m</span>
+        </label>
+        <label>
+          <input type="radio" name="sex" value="f" />
+          <span class="sex-label">f</span>
+        </label>
+      </div>
 
       <button class="add-friend-button">add friend</button>
 
@@ -31,9 +45,39 @@
     <script type="text/html" id="friend-listing">
       <% m.friends.forEach(function(friend) { %>
 
-        <li>
-          <p>name: <%- friend.name %></p>
-          <p>sex: <%- friend.sex %></p>
+        <li data=<%- friend._id %>>
+          <h2 data=<%- friend.sex %> class="listing-component">
+            <span class="first-name-display"><%- friend.firstName %></span>
+            <span class="last-name-display"><%- friend.lastName %></span>
+            <button class="edit-button" hidden>p</button>
+            <input type="text" class="edit-input first-name-edit" placeholder="first name" hidden/>
+            <input type="text" class="edit-input last-name-edit" placeholder="last name" hidden/>
+          </h2>
+          <p class="listing-component">
+            hometown: <span class="hometown-display"><%- friend.hometown %></span>
+            <button class="edit-button" hidden>p</button>
+            <input type="text" class="edit-input hometown-edit" placeholder="hometown" hidden/>
+          </p>
+          <p class="listing-component">
+            occupation: <span class="occupation-display"><%- friend.occupation %></span>
+            <button class="edit-button" hidden>p</button>
+            <input type="text" class="edit-input occupation-edit" placeholder="occupation" hidden/>
+          </p>
+          <p class="listing-component">
+            email: <span class="email-display"><%- friend.email %></span>
+            <button class="edit-button" hidden>p</button>
+            <input type="text" class="edit-input email-edit" placeholder="email" hidden/>
+          </p>
+          <p class="listing-component">
+            phone: <span class="phone-display"><%- friend.phone %></span>
+            <button class="edit-button" hidden>p</button>
+            <input type="text" class="edit-input phone-edit" placeholder="phone" hidden/>
+          </p>
+          <button class="listing-button main-edit-button" title="edit entry">p</button>
+          <button class="listing-button favorite-button <% if (friend.isFavorite) { %>favorite<% } %>" title="favorite">f</button>
+          <button class="listing-button chat-button" title="email this friend">c</button>
+          <button class="listing-button delete-button" title="delete">d</button>
+          <hr />
         </li>
 
       <% }) %>
